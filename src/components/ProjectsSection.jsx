@@ -1,5 +1,7 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import premioImg from "../assets/premio.jpg";
+import project2Img from "../assets/project2.png";
+import project3Img from "../assets/project3.png";
 import { useState, useEffect, useRef } from "react";
 
 const projects = [
@@ -14,13 +16,13 @@ const projects = [
   },
   {
     id: 2,
-    title: "Calculator App",
-    description: "testing...",
-    image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Crect width='300' height='400' fill='%23202124'/%3E%3Crect x='20' y='20' width='260' height='80' rx='8' fill='%23313337'/%3E%3Ctext x='250' y='70' font-family='monospace' font-size='32' fill='%23ffffff' text-anchor='end'%3E0%3C/text%3E%3Cg transform='translate(20, 120)'%3E%3Crect x='0' y='0' width='60' height='60' rx='4' fill='%23616161' /%3E%3Ctext x='30' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3EC%3C/text%3E%3Crect x='66' y='0' width='60' height='60' rx='4' fill='%23616161'/%3E%3Ctext x='96' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E±%3C/text%3E%3Crect x='132' y='0' width='60' height='60' rx='4' fill='%23616161'/%3E%3Ctext x='162' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E%25%3C/text%3E%3Crect x='198' y='0' width='60' height='60' rx='4' fill='%2347a647'/%3E%3Ctext x='228' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E÷%3C/text%3E%3C/g%3E%3Cg transform='translate(20, 186)'%3E%3Crect x='0' y='0' width='60' height='60' rx='4' fill='%23424242'/%3E%3Ctext x='30' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E7%3C/text%3E%3Crect x='66' y='0' width='60' height='60' rx='4' fill='%23424242'/%3E%3Ctext x='96' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E8%3C/text%3E%3Crect x='132' y='0' width='60' height='60' rx='4' fill='%23424242'/%3E%3Ctext x='162' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E9%3C/text%3E%3Crect x='198' y='0' width='60' height='60' rx='4' fill='%2347a647'/%3E%3Ctext x='228' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E×%3C/text%3E%3C/g%3E%3Cg transform='translate(20, 252)'%3E%3Crect x='0' y='0' width='60' height='60' rx='4' fill='%23424242'/%3E%3Ctext x='30' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E4%3C/text%3E%3Crect x='66' y='0' width='60' height='60' rx='4' fill='%23424242'/%3E%3Ctext x='96' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E5%3C/text%3E%3Crect x='132' y='0' width='60' height='60' rx='4' fill='%23424242'/%3E%3Ctext x='162' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E6%3C/text%3E%3Crect x='198' y='0' width='60' height='60' rx='4' fill='%2347a647'/%3E%3Ctext x='228' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E-%3C/text%3E%3C/g%3E%3Cg transform='translate(20, 318)'%3E%3Crect x='0' y='0' width='60' height='60' rx='4' fill='%23424242'/%3E%3Ctext x='30' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E1%3C/text%3E%3Crect x='66' y='0' width='60' height='60' rx='4' fill='%23424242'/%3E%3Ctext x='96' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E2%3C/text%3E%3Crect x='132' y='0' width='60' height='60' rx='4' fill='%23424242'/%3E%3Ctext x='162' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E3%3C/text%3E%3Crect x='198' y='0' width='60' height='60' rx='4' fill='%2347a647'/%3E%3Ctext x='228' y='38' font-family='sans-serif' font-size='24' fill='white' text-anchor='middle'%3E+%3C/text%3E%3C/g%3E%3C/svg%3E",
-    tags: ["HTML", "CSS", "JavaScript"],
+    title: "Hardware Inventory & POS System",
+    description: "Complete inventory management and point of sale system for hardware businesses. Features sales tracking, inventory management, and comprehensive reporting dashboard.",
+    image: project2Img,
+    tags: ["PHP", "MySQL", "Bootstrap", "JavaScript", "ChartJS"],
     demoUrl: "#",
     githubUrl: "#",
-  }
+  },
 ];
 
 export const ProjectsSection = () => {

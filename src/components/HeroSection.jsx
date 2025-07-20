@@ -452,10 +452,11 @@ export const HeroSection = () => {
 
             <div className="pt-6 md:pt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 w-full sm:w-auto">
               <a 
-                href="#projects" 
+                href="/resume.pdf" 
+                download="resume.pdf"
                 className="relative inline-flex items-center px-6 py-3 rounded-full bg-primary text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 group w-[200px] sm:w-auto text-center justify-center"
               >
-                <span className="relative z-10">Projects</span>
+                <span className="relative z-10">Download CV</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </a>
               <div className="flex space-x-4 mt-4 sm:mt-0">
@@ -480,7 +481,7 @@ export const HeroSection = () => {
       <div className={`absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/5 rounded-full filter blur-3xl transition-all duration-1000 delay-700 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}></div>
       
       {/* Scroll to explore indicator */}
-      <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center transition-all duration-1000 delay-800 ${isLoaded ? 'opacity-70 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center transition-all duration-1000 delay-800 ${isLoaded ? 'opacity-70 translate-y-0' : 'opacity-0 translate-y-10'} z-10 mt-40 sm:mt-0`}>
         <p className="text-xs font-light mb-1 text-foreground/70 font-bold">Scroll to explore</p>
         <div className="animate-bounce">
           <ArrowDown className="h-4 w-4 text-primary/80" />
