@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export const StarBackground = () => {
   const [stars, setStars] = useState([]);
+  const [shootingStars, setShootingStars] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -29,10 +30,12 @@ export const StarBackground = () => {
     });
 
     generateStars();
+    generateShootingStars();
 
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
       generateStars();
+      generateShootingStars();
     };
 
     window.addEventListener("resize", handleResize);
@@ -65,6 +68,28 @@ export const StarBackground = () => {
     }
 
     setStars(newStars);
+  };
+
+  const generateShootingStars = () => {
+    const numberOfShootingStars = isMobile ? 4 : 6;
+    const newShootingStars = [];
+
+    for (let i = 0; i < numberOfShootingStars; i++) {
+      const isFast = Math.random() > 0.5;
+      newShootingStars.push({
+        id: `shooting-${i}`,
+        size: Math.random() * 3 + 2,
+        x: Math.random() * 100,
+        y: Math.random() * 30, // Start from top third of screen
+        opacity: Math.random() * 0.9 + 0.1,
+        animationDuration: isFast ? Math.random() * 2 + 1.5 : Math.random() * 3 + 2,
+        animationDelay: Math.random() * 20, // Random delay for staggered appearance
+        angle: Math.random() * 20 + 25, // Random angle between 25-45 degrees
+        type: isFast ? 'fast' : 'normal'
+      });
+    }
+
+    setShootingStars(newShootingStars);
   };
 
   if (!isDarkMode) {
@@ -125,6 +150,24 @@ export const StarBackground = () => {
             opacity: star.opacity,
             animationDuration: star.animationDuration + "s",
             animationDelay: star.animationDelay + "s",
+          }}
+        />
+      ))}
+      
+      {/* Shooting stars */}
+      {shootingStars.map((star) => (
+        <div
+          key={star.id}
+          className={`shooting-star ${star.type === 'fast' ? 'shooting-star-fast' : ''}`}
+          style={{
+            width: star.size + "px",
+            height: star.size + "px",
+            left: star.x + "%",
+            top: star.y + "%",
+            opacity: star.opacity,
+            animationDuration: star.animationDuration + "s",
+            animationDelay: star.animationDelay + "s",
+            transform: `translate(-50%, -50%) rotate(${star.angle}deg)`,
           }}
         />
       ))}
